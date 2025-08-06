@@ -24,7 +24,9 @@ library.add(faUser, faRobot,fas)
 // 5. 注册组件
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
+import RestPlugin from './plugin/rest-plugin';
 
+Vue.use(RestPlugin);
 new Vue({
   router,
   render: h => h(App),

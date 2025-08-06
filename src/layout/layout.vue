@@ -5,7 +5,7 @@
       <aside class="sidebar">
          <system-menu></system-menu>
       </aside>
-      <section :class="bgClass" class="content">
+      <section class="content">
         <router-view />
       </section> 
     </div>
@@ -13,25 +13,14 @@
 </template>
 
 <script>
-import HeaderTop from "./components/header-top/index.vue";
-import SystemMenu from "./components/system-menu/index.vue";
+import HeaderTop from "@/components/header-top/index.vue";
+import SystemMenu from "@/components/system-menu/index.vue";
 export default {
   name: "App",
   components: {
     HeaderTop,
     SystemMenu,
   },
-  computed: {
-    bgClass() {
-      const path = this.$route.path;
-      if (path === '/') {
-        return 'bg-white';
-      } else if (path === '/home') {
-        return 'bg-black';
-      }
-      return '';
-    }
-  }
 };
 </script>
 
@@ -60,7 +49,7 @@ html, body {
 
 /* 顶部导航栏 */
 .header {
-  height: 56px;
+  height: 74px;
   color: white;
   display: flex;
   align-items: center;
@@ -102,17 +91,6 @@ html, body {
   flex: 1;
   overflow-y: auto;
   background-color: #3c3c3c;
-  height: 100%;
-}
-.bg-white {
-  background-color: white;
-  min-height: 100vh; /* 保证背景铺满 */
-}
-
-.bg-black {
-  background-color: black;
-  min-height: 100vh;
-  color: white; /* 黑背景文字白色 */
 }
 </style>
 
